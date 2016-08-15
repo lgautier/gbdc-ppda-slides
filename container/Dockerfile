@@ -38,7 +38,7 @@ RUN \
   unzip v0.12.1.zip && \
   cd llvmlite-0.12.1 && \
   LLVM_CONFIG=`which llvm-config-3.7` python3 setup.py install && \
-  cd .. && rm -rf llvmite-0.12.1 && rm v0.12.1.zip && \
+  cd .. && rm -rf llvmlite-0.12.1 && rm v0.12.1.zip && \
   pip3 --no-cache install numba && \
   pip3 --no-cache install findspark && \
   rm -rf /root/.cache
@@ -59,7 +59,6 @@ RUN \
   rm rpacks.txt
 
 #COPY notebooks/finefoods.db /notebooks/
-#COPY notebooks/slides.ipynb /notebooks/
   
 COPY finefoods_to_sqlite.py /opt/data/finefoods_to_sqlite.py
 
@@ -79,5 +78,7 @@ RUN pip3 --no-cache install notedown && \
     rm -rf /root/.cache
 
 USER $NB_USER
+RUN mkdir /home/$NB_USER/work
+COPY ../notebooks/slides.ipynb /home/$NB_USER/work
 
 CMD jupyter notebook --no-browser
