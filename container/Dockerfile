@@ -78,7 +78,7 @@ RUN pip3 --no-cache install notedown && \
     rm -rf /root/.cache
 
 USER $NB_USER
-RUN mkdir /home/$NB_USER/work
+RUN mkdir -p /home/$NB_USER/work
 COPY ../notebooks/slides.ipynb /home/$NB_USER/work
 
 CMD jupyter notebook --no-browser
