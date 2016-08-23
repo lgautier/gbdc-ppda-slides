@@ -12,6 +12,9 @@ The conference version of edible art: a docker container to reproduce all code i
 
 If you already have docker installed and running, go to the next section. Otherwise check [https://www.docker.com/]
 
+**Docker image**: [![](https://images.microbadger.com/badges/image/rpy2/gbdc-ppda-slides.svg)](https://microbadger.com/images/rpy2/gbdc-ppda-slides "Get your own image badge on microbadger.com")
+
+
 ### Starting
 
 The following two-step process should be all that is needed:
